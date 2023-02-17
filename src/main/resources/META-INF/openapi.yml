@@ -1,0 +1,63 @@
+openapi: 3.0.0
+info:
+  title: OPEN API
+  description: Modificacion y creacion de un libro
+  version: 1.0.0
+
+paths:
+
+  /books/{id}:
+
+    get:
+      summary: Lista los libros por su id
+      responses:
+        '200':
+          description: OK
+
+    put:
+      summary: Modifica un libro por su id
+      responses:
+        '200':
+          description: OK
+    delete:
+      summary: Elimina un libro por su id
+      responses:
+        '200':
+          description: OK
+  /books:
+    get:
+      summary: Lista todos los libros
+      responses:
+        '200':
+          description: OK
+
+    post:
+      summary: Crea un nuevo libro
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: integer
+                author:
+                  type: string
+                isbn:
+                  type: string
+                title:
+                  type: string
+                price:
+                  type: number
+      responses:
+        '200':
+          description: Se crea un libro
+        '400':
+          description: Error
+
+
+
+
+
+
